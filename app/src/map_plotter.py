@@ -40,9 +40,8 @@ if __name__ == "__main__":
         next(f)
 
         for line in f:
-            id_str, latitude_str, longitude_str = line.split(',')
+            id, latitude_str, longitude_str = line.split(',')
 
-            id = int(id_str)
             latitude = float(latitude_str)
             longitude = float(longitude_str)
 

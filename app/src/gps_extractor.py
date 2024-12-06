@@ -21,14 +21,14 @@ class GPSExtractor:
 
         for f in os.listdir(self.assets_path):
             if f.lower().endswith(".jpg") or f.lower().endswith(".jpeg"):
-                full_path = os.path.join(self.assets_path, f)
-                jpeg_files.append(full_path)
+                file_path = os.path.join(self.assets_path, f)
+                jpeg_files.append(file_path)
 
         return jpeg_files
 
     def get_exif_data(self, jpeg_file):
         """
-        Gets EXIF data from jpeg file
+        Gets EXIF data from JPEG file
         """
         try:
             with open(jpeg_file, "rb") as f:
