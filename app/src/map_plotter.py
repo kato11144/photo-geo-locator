@@ -16,9 +16,9 @@ class MapPlotter:
         """
         Plots pins on the map based on the provided GPS data
         """
-        for id, coords in gps_data.items():
-            latitude = coords["latitude"]
-            longitude = coords["longitude"]
+        for id, coord in gps_data.items():
+            latitude = coord["latitude"]
+            longitude = coord["longitude"]
 
             folium.Marker(
                 [latitude, longitude],

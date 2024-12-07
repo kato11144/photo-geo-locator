@@ -20,7 +20,7 @@ class GPSExtractor:
         jpeg_files = []
 
         for f in os.listdir(self.assets_path):
-            if f.lower().endswith(".jpg") or f.lower().endswith(".jpeg"):
+            if f.lower().endswith((".jpg", ".jpeg")):
                 file_path = os.path.join(self.assets_path, f)
                 jpeg_files.append(file_path)
 
@@ -115,5 +115,5 @@ if __name__ == "__main__":
     with open("./tmp/gps.txt", "w") as f:
         f.write("id,latitude,longitude\n")
 
-        for id, coords in gps_data.items():
-            f.write(f"{id},{coords['latitude']},{coords['longitude']}\n")
+        for id, coord in gps_data.items():
+            f.write(f"{id},{coord['latitude']},{coord['longitude']}\n")
